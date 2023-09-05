@@ -1,0 +1,12 @@
+.form{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  margin: 16px;
+  background: whitesmoke;
+}
+  
+.mat-hint {
+  color: red;
+}

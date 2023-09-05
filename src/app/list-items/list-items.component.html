@@ -1,0 +1,21 @@
+<mat-card *ngIf="!isEditing" class="form">
+  <!-- <mat-card-content> -->
+    <mat-label class="label">{{ item.name }}</mat-label>
+    <mat-label  class="label">{{ item.price }}</mat-label>
+    <button mat-icon-button (click)="startEdit()">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+    </button>
+
+    <button mat-icon-button  color="danger" (click)="onRemove()">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+    </button>
+
+
+  <!-- </mat-card-content> -->
+</mat-card>
+
+
+<ng-container *ngIf="isEditing">
+  <app-add-item (addItem)="endEdit($event)" [editItem]="item">
+  </app-add-item>
+</ng-container>
