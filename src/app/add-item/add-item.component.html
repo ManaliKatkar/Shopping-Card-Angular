@@ -3,12 +3,14 @@
     <mat-form-field appearance="outline">
       <input type="text" formControlName="name" matInput placeholder="Name">
         <mat-hint *ngIf="isSubmmitted && f.name.errors && f.name.errors['required']">Required</mat-hint>
+        
+      
     </mat-form-field>
 
 
     <mat-form-field appearance="outline">
       <input type="number" formControlName="price" min="1" matInput placeholder="Price">
-      <mat-hint *ngIf="isSubmmitted && f.price.errors && f.price.errors['required']">Required</mat-hint>
+      <mat-hint *ngIf="isSubmmitted && f.price.errors && f.price.errors['min']">Minimum Price 100</mat-hint>
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="handleSubmit()">

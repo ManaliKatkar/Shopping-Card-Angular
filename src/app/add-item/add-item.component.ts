@@ -12,8 +12,8 @@ export class AddItemComponent implements OnInit {
   @Input() editItem: Item | undefined;
   isSubmmitted: boolean = false;
   addItemForm = this.formBuilder.group({
-    price: new FormControl('', Validators.required),
-    name: new FormControl('', Validators.required)
+    price: new FormControl(0, Validators.required),
+    name: new FormControl('', [Validators.required, Validators.min(100)])
   });
 
   constructor(private formBuilder: FormBuilder) { }
